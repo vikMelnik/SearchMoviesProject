@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import com.google.android.material.snackbar.Snackbar
 import come.geekbrains.vitekm.searchmovies.databinding.MainFragmentBinding
 import come.geekbrains.vitekm.searchmovies.model.AppState
 import come.geekbrains.vitekm.searchmovies.model.Movie
@@ -63,6 +64,7 @@ class MainFragment : Fragment() {
             }
             is AppState.Error -> {
                 progressBar.visibility = View.GONE
+
 
                 Toast.makeText(context, " ERROR ", Toast.LENGTH_LONG).show()
             }
