@@ -36,6 +36,7 @@ class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemView
     inner class MainViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(movie: Movie) = with(binding) {
             mainFragmentRecyclerItemTextView.text = movie.name
+            pictureMovie.setImageResource(movie.picture)
             root.setOnClickListener { itemClickListener.onItemViewClick(movie) }
         }
     }

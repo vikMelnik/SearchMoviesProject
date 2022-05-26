@@ -75,8 +75,10 @@ class MainFragment : Fragment() {
             is AppState.Error -> {
                 progressBar.visibility = View.GONE
 
-
-                Toast.makeText(context, " ERROR ", Toast.LENGTH_LONG).show()
+                Snackbar
+                    .make(binding.mainFragmentRecyclerView, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
+                    .setAction(getString(R.string.reload)) { viewModel.getMoviesFromLocalSourceWorld() }
+                    .show()
             }
         }
     }
