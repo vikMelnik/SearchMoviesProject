@@ -3,17 +3,15 @@
     <string name="action_home">Home</string>
     <string name="action_favorites">Favorite</string>
     <string name="action_ratings">Ratings</string>
-
     <string name="description_titanic">Description the Titanic movie:
-    Fkjklkjjk;kl;lkjhugohoj
-    giuguhiuhoiutytcjgvbhbkiuhohlhu
-    fgvcjgvjugvjgvjftufufvjvbj
-    oihohouhyfteyiytdeshgkjloui
-    uhuigyguyfutftuftfutfutfugiuui.</string>
-
+    hfuhfosdfoksjdofs
+    fsf;sdf;mf;mf;sdf
+    ;mf;mf;;ffm,;fm,sd;m
+    yurtojivnsdfuif;gm;gp;ogkger
+    </string>
     <string name="uuid_label">Id</string>
     <string name="director">Director</string>
-    <string name="genre">Genre</string>
-    <string name="rating">Rating</string>
+    <string name="genre">Genre: %s"</string>
+    <string name="rating">Rating: %s"</string>
     <string name="yearDate">Date Start</string>
 </resources>

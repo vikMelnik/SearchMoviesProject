@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
+import come.geekbrains.vitekm.searchmovies.R
 import come.geekbrains.vitekm.searchmovies.databinding.MainFragmentBinding
 import come.geekbrains.vitekm.searchmovies.model.AppState
 import come.geekbrains.vitekm.searchmovies.model.Movie
 import come.geekbrains.vitekm.searchmovies.ui.adapters.MainFragmentAdapter
+import come.geekbrains.vitekm.searchmovies.ui.details.DetailsFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -50,8 +52,16 @@ class MainFragment : Fragment() {
                 progressBar.visibility = View.GONE
                 adapter = MainFragmentAdapter(object : OnItemViewClickListener {
                     override fun onItemViewClick(movie: Movie) {
-
-                        Toast.makeText(context, " Movies ", Toast.LENGTH_LONG).show()
+                        val manager = activity?.supportFragmentManager
+                        manager?.let { manager ->
+                            val bundle = Bundle().apply {
+                                putParcelable(DetailsFragment.BUNDLE_EXTRA, movie)
+                            }
+                            manager.beginTransaction()
+                                .replace(R.id.container, DetailsFragment.newInstance(bundle))
+                                .addToBackStack("")
+                                .commitAllowingStateLoss()
+                        }
 
                     }
                 }).apply {
