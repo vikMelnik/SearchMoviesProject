@@ -45,7 +45,6 @@ class MainFragment : Fragment() {
 
     }
 
-
     private fun renderData(appState: AppState) = with(binding) {
         when (appState) {
             is AppState.Success -> {
@@ -62,7 +61,6 @@ class MainFragment : Fragment() {
                                 .addToBackStack("")
                                 .commitAllowingStateLoss()
                         }
-
                     }
                 }).apply {
                     setMovies(appState.moviesData)
@@ -75,10 +73,11 @@ class MainFragment : Fragment() {
             is AppState.Error -> {
                 progressBar.visibility = View.GONE
 
-                Snackbar
-                    .make(binding.mainFragmentRecyclerView, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
-                    .setAction(getString(R.string.reload)) { viewModel.getMoviesFromLocalSourceWorld() }
-                    .show()
+                mainFragmentRootView.showSnackBar(
+                    getString(R.string.error),
+                    getString(R.string.reload),
+                    { viewModel.getMoviesFromLocalSourceWorld() })
+
             }
         }
     }
@@ -97,4 +96,13 @@ class MainFragment : Fragment() {
     companion object {
         fun newInstance() = MainFragment()
     }
+}
+
+private fun View.showSnackBar(
+    text: String,
+    actionText: String,
+    action: (View) -> Unit,
+    length: Int = Snackbar.LENGTH_INDEFINITE
+) {
+    Snackbar.make(this, text, length).setAction(actionText, action).show()
 }
