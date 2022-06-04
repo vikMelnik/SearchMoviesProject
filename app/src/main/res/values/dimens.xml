@@ -2,4 +2,7 @@
 <resources>
     <dimen name="recycler_item_padding">5dp</dimen>
     <dimen name="recycler_item_text_size">18sp</dimen>
+    <dimen name="movie_name_margin_top">50dp</dimen>
+    <dimen name="allMargin">8dp</dimen>
+    <dimen name="value_text_size">16sp</dimen>
 </resources>

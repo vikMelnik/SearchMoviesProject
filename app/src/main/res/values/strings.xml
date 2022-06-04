@@ -3,4 +3,20 @@
     <string name="action_home">Home</string>
     <string name="action_favorites">Favorite</string>
     <string name="action_ratings">Ratings</string>
+    <string name="error">ERROR!</string>
+    <string name="reload">RELOAD</string>
+
+    <string name="description_titanic">Description the Titanic movie:
+    hfuhfosdfoksjdofs
+    fsf;sdf;mf;mf;sdffasfasf
+    ;mf;mf;;ffm,;fm,sd;mfasfasfasfasfaf
+    yurtojivnsdfuif;gm;gp;ogkgerfafasafg
+        jytjtyjtyj
+    </string>
+
+    <string name="uuid_label">Id</string>
+    <string name="director">Director</string>
+    <string name="genre">Genre: %s"</string>
+    <string name="rating">Rating: %s"</string>
+    <string name="yearDate">Date Start</string>
 </resources>
