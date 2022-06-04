@@ -4,9 +4,8 @@ import come.geekbrains.vitekm.searchmovies.model.Movie
 import come.geekbrains.vitekm.searchmovies.model.getWorldMovies
 
 class RepositoryImpl: Repository {
-    override fun getMoviesFromServer(): Movie = Movie()
 
-    override fun getMoviesFromLocalStorageWorld(): List<Movie> {
-        return getWorldMovies()
-    }
+    override fun getMoviesFromServer() = Movie()
+
+    override fun getMoviesFromLocalStorageWorld() = getWorldMovies()
 }
