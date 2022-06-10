@@ -20,7 +20,7 @@ class RepositoryImpl : Repository {
                     i.fullTitle.toString(),
                     i.imDbRating.toString(),
                     i.year,
-                    i.image.toInt(),
+                    i.image,
                     i.crew.toString()
                 )
                 result.add(filmItem)

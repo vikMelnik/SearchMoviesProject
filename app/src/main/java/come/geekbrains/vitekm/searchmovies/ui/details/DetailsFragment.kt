@@ -39,7 +39,7 @@ class DetailsFragment : Fragment() {
         with(binding) {
             movieName.text = movie.name
 
-            pictureMovie.setImageResource(movie.picture)
+            pictureMovie.setImageResource(R.drawable.moviescr)
 
             descriptionMove.text = movie.crew
 

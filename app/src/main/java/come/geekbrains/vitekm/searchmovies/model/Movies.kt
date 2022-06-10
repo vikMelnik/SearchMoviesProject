@@ -13,7 +13,7 @@ data class Movie(
     var fullTitle: String = " ",
     var rating: String = "0.0",
     var yearStart: String = "Date of start: 2017",
-    var picture: Int = R.drawable.moviescr,
+    var picture: String = "R.drawable.moviescr",
     var crew: String = " "
 ) : Parcelable
 
@@ -29,12 +29,12 @@ fun getWorldMovies() = listOf(
                 "                \"(1994)",
         "8.3",
         "Date of start: 2017",
-        R.drawable.moviescr,
+        "R.drawable.moviescr",
         "rrrrrrrrrrrr"
     ),
     Movie(
         "tt0068646", "The\n" +
-                "Godfather", "2", " Godfather", "7.6", "Date of start: 1983", R.drawable.moviescr
+                "Godfather", "2", " Godfather", "7.6", "Date of start: 1983", "R.drawable.moviescr"
     ),
     Movie(
         "tt0468569",
@@ -44,7 +44,7 @@ fun getWorldMovies() = listOf(
         " fantastika",
         "8.8",
         "Date of start: 1978",
-        R.drawable.moviescr,
+        "R.drawable.moviescr",
         "111111111111"
     ),
     Movie(
@@ -55,7 +55,7 @@ fun getWorldMovies() = listOf(
         " cartoon",
         "7.4",
         "Date of start: 1986",
-        R.drawable.moviescr
+        "R.drawable.moviescr"
     ),
     Movie(
         "tt0050083",
@@ -65,7 +65,7 @@ fun getWorldMovies() = listOf(
         " adventure",
         "8.3",
         "Date of start: 2016",
-        R.drawable.moviescr
+        "R.drawable.moviescr"
     ),
     Movie(
         "tt0108052",
@@ -75,7 +75,7 @@ fun getWorldMovies() = listOf(
         " fantastika",
         "6.8",
         "Date of start: 2006",
-        R.drawable.moviescr,
+        "R.drawable.moviescr",
         "R.string.description_titanic"
-    ),
+    )
 )
