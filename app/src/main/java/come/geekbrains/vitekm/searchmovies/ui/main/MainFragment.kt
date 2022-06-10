@@ -41,6 +41,7 @@ class MainFragment : Fragment() {
             val observer = Observer<AppState> { renderData(it) }
             viewModel.liveData.observe(viewLifecycleOwner, observer)
             viewModel.getMoviesFromLocalSourceWorld()
+            viewModel.getMoviesFromImdbServer()
         }
 
     }
@@ -63,6 +64,7 @@ class MainFragment : Fragment() {
                         }
                     }
                 }).apply {
+                   // setMovies(appState.moviesFromImdbServer)
                     setMovies(appState.moviesData)
                 }
                 mainFragmentRecyclerView.adapter = adapter

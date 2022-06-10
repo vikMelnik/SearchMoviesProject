@@ -34,10 +34,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="@dimen/allMargin"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/errorTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yearDate"
+        app:layout_constraintTop_toBottomOf="@+id/pictureMovie"
         tools:text="@string/description_titanic" />
 
     <TextView
@@ -94,6 +94,20 @@
         app:layout_constraintStart_toEndOf="@+id/pictureMovie"
         app:layout_constraintTop_toBottomOf="@+id/rating"
         android:hint="@string/yearDate" />
+
+    <TextView
+        android:id="@+id/errorTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:text="@string/error_happened"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
 
     <ProgressBar
         android:id="@+id/progressBar"

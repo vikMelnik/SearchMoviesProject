@@ -38,19 +38,19 @@ class DetailsFragment : Fragment() {
     private fun renderData(movie: Movie) {
         with(binding) {
             movieName.text = movie.name
-            pictureMovie.setImageResource(movie.picture)
-            descriptionMove.text = getString(movie.description)
-            director.text = movie.director
-            uuid.text = movie.id.toString()
 
-            genre.text = String.format(
-                getString(R.string.genre),
-                movie.genre
-            )
-            rating.text = String.format(
-                getString(R.string.rating),
-                movie.rating.toString()
-            )
+            pictureMovie.setImageResource(movie.picture)
+
+            descriptionMove.text = movie.crew
+
+            director.text = movie.imDbRatingCount
+
+            uuid.text = movie.id
+
+            genre.text = movie.fullTitle
+
+            rating.text = movie.rating
+
             yearDate.text = movie.yearStart
         }
     }
