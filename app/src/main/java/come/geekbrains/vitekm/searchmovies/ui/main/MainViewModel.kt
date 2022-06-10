@@ -11,6 +11,8 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
     val liveData: LiveData<AppState> get() = localLiveData
 
     fun getMoviesFromLocalSourceWorld() = getDataFromLocalSource()
+    fun getMoviesFromServer() = getDataFromLocalSource()
+    fun getMoviesFromImdbServer() = getDataFromLocalSource()
 
     private fun getDataFromLocalSource() {
         localLiveData.value = AppState.Loading
@@ -18,8 +20,12 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
             Thread.sleep(1000)
             localLiveData.postValue(
 
-                AppState.Success(repository.getMoviesFromLocalStorageWorld())
+                AppState.Success(
+                    repository.getMoviesFromLocalStorageWorld(),
+                    repository.getMoviesFromImdbServer()
+                )
             )
+
         }.start()
     }
 }
