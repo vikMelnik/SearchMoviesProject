@@ -4,7 +4,6 @@ import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
 import com.google.gson.Gson
-import come.geekbrains.vitekm.searchmovies.model.rest_entities.MoviesDTO
 import come.geekbrains.vitekm.searchmovies.model.rest_entities.MoviesTop250Data
 import java.io.BufferedReader
 import java.io.InputStreamReader
