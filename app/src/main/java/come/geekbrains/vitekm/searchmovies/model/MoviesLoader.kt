@@ -1,9 +1,11 @@
 package come.geekbrains.vitekm.searchmovies.model
 
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import com.google.gson.Gson
 import come.geekbrains.vitekm.searchmovies.model.rest_entities.MoviesDTO
+import come.geekbrains.vitekm.searchmovies.model.rest_entities.MoviesTop250Data
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.URL
@@ -11,7 +13,7 @@ import java.util.stream.Collectors
 import javax.net.ssl.HttpsURLConnection
 
 object MoviesLoader {
-    fun loadMovies(): MoviesDTO? {
+    fun loadMovies(): MoviesTop250Data? {
         val uri = URL("https://imdb-api.com/en/API/Top250Movies/k_xtdh6plc")
         lateinit var urlConnection: HttpsURLConnection
 
@@ -30,9 +32,10 @@ object MoviesLoader {
                 getLines(bufferedReader)
             }
 
-            Gson().fromJson(lines,MoviesDTO::class.java)
+            Gson().fromJson(lines, MoviesTop250Data::class.java)
         } catch (e: Exception) {
             e.printStackTrace()
+            Log.d("myLogs", "Нет доступа к сервису")
             null
         } finally {
             urlConnection.disconnect()

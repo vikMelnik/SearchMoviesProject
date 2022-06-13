@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toTopOf="@id/errorTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yearDate"
+        app:layout_constraintTop_toBottomOf="@+id/pictureMovie"
         tools:text="@string/description_titanic" />
 
     <TextView
