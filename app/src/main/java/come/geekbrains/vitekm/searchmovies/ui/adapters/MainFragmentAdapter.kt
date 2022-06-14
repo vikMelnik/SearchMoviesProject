@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import come.geekbrains.vitekm.searchmovies.R
 import come.geekbrains.vitekm.searchmovies.databinding.FragmentMainRecyclerViewBinding
 import come.geekbrains.vitekm.searchmovies.model.Movie
-import come.geekbrains.vitekm.searchmovies.ui.main.MainFragment
+import come.geekbrains.vitekm.searchmovies.ui.main.ListFragment
 
-class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemViewClickListener)
+
+class MainFragmentAdapter(private val itemClickListener: ListFragment.OnItemViewClickListener)
     : RecyclerView.Adapter<MainFragmentAdapter.MainViewHolder>() {
     private var moviesData: List<Movie> = listOf()
     private lateinit var binding: FragmentMainRecyclerViewBinding
