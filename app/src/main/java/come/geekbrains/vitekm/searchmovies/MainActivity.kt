@@ -9,7 +9,8 @@ import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import come.geekbrains.vitekm.searchmovies.services.MainBroadcastReceiver
-import come.geekbrains.vitekm.searchmovies.ui.main.MainFragment
+import come.geekbrains.vitekm.searchmovies.ui.main.ListFragment
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, ListFragment.newInstance())
                 .commitNow()
         }
 
