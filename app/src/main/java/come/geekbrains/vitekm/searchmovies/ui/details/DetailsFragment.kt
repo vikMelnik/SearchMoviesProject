@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import coil.load
 import come.geekbrains.vitekm.searchmovies.R
 import come.geekbrains.vitekm.searchmovies.databinding.DetailFragmentBinding
 
@@ -39,7 +40,10 @@ class DetailsFragment : Fragment() {
         with(binding) {
             movieName.text = movie.name
 
-            pictureMovie.setImageResource(R.drawable.moviescr)
+            pictureMovie.load(movie.picture){
+                crossfade(true)
+                placeholder(R.drawable.ic_launcher_background)
+            }
 
             descriptionMove.text = movie.crew
 

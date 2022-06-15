@@ -8,7 +8,7 @@ const val IMDB_TOP_250_MOVIES = "Top250Movies"
 
 object ApiUtils {
 
-   val baseUrlMain = "https://imdb-api.com/en/API/Top250Movies/"
+   const val baseUrlMain = "https://imdb-api.com/en/API/Top250Movies/"
 
     fun getOkHTTPBuilderWithHeaders(): OkHttpClient {
         val httpClient = OkHttpClient.Builder()
@@ -19,7 +19,7 @@ object ApiUtils {
             val original = chain.request()
             val request = original.newBuilder()
                 .header("apiKey", "k_xtdh6plc")
-                .method(original.method(), original.body())
+                .method(original.method, original.body)
                 .build()
 
             chain.proceed(request)
