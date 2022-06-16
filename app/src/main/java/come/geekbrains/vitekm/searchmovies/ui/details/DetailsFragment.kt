@@ -42,6 +42,7 @@ class DetailsFragment : Fragment() {
 
             pictureMovie.load(movie.picture){
                 crossfade(true)
+                size(350,350)
                 placeholder(R.drawable.ic_launcher_background)
             }
 

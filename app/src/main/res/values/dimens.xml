@@ -5,4 +5,6 @@
     <dimen name="movie_name_margin_top">50dp</dimen>
     <dimen name="allMargin">8dp</dimen>
     <dimen name="value_text_size">16sp</dimen>
+    <dimen name="image_W_and_H">250dp</dimen>
+    <dimen name="image_W_H">100dp</dimen>
 </resources>
