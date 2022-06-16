@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import come.geekbrains.vitekm.searchmovies.R
 import come.geekbrains.vitekm.searchmovies.databinding.FragmentMainRecyclerViewBinding
 import come.geekbrains.vitekm.searchmovies.model.Movie
 import come.geekbrains.vitekm.searchmovies.ui.main.MainFragment
+
 
 class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemViewClickListener)
     : RecyclerView.Adapter<MainFragmentAdapter.MainViewHolder>() {
@@ -37,7 +39,11 @@ class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemView
     inner class MainViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(movie: Movie) = with(binding) {
             mainFragmentRecyclerItemTextView.text = movie.name
-            pictureMovie.setImageResource(R.drawable.moviescr)
+            pictureMovie.load(movie.picture){
+                crossfade(true)
+                placeholder(R.drawable.ic_launcher_background)
+            }
+            //pictureMovie.setImageResource(R.drawable.moviescr)
             root.setOnClickListener { itemClickListener.onItemViewClick(movie) }
         }
     }
